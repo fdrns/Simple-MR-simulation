@@ -1,9 +1,6 @@
 #Exploring SNPs score simulation
 #After http://www.r-bloggers.com/instrumental-variables-simulation/
 
-#Set working directory
-setwd("Z:/Data/Fotios/Simulation")
-
 #Load used libraries
 library(MASS)
 library(ggplot2)
@@ -30,13 +27,6 @@ mr_corr_sim<-function(n_sample,score_corr,met_corr){
   #Generate x1 and x2
   x1 <- x1Star+z1
   x2 <- x2Star+z2
-  
-  #Tesing the correlations
-  #cor(x1Star,x2Star)
-  #cor(x1,x2)
-  #cor(x1,z2)
-  #cor(x2,z1)
-  #cor(z1,z2)
   
   #Generate the risk factor
   y<-1+x1+x2+rnorm(n_sample, 0, 0.5)
