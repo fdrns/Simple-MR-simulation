@@ -79,7 +79,7 @@ mr_score_dat$True_MR_per<-100*(-mr_score_dat$Full_model+mr_score_dat$MR_model)/m
 #Model between score correlation and bias oercentage
 bias_mode<-lm(mr_score_dat$True_MR_per ~ mr_score_dat$Gen_score_corr)
 
-# Add points
+# Generate plot
 ggplot(data=mr_score_dat, aes(x=Gen_score_corr, y=True_MR_per, group=1)) +
   geom_abline(intercept = coef(bias_mode)[1], slope = coef(bias_mode)[2],
               colour="red", linetype="solid", size=1.5) +
